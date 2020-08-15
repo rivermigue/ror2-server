@@ -28,9 +28,9 @@ RUN set -x \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
   
-RUN adduser -u 1000 bedrock
+RUN adduser -u 1001 bedrock
 RUN usermod -a -G bedrock bedrock
 
 ENV WINEPREFIX=/home/bedrock
 ENV WINEDEBUG=-all
-USER 1000:1000
+USER 1001:1001
