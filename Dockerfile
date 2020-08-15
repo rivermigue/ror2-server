@@ -22,9 +22,6 @@ RUN set -x \
 		wine-stable-i386=3.0.1~buster \
 	&& apt-get install -y --no-install-recommends --no-install-suggests \
 		wine-stable=3.0.1~buster \
-	&& chown -R steam:steam ${STEAMAPPDIR} \
-	&& ${STEAMCMDDIR}/steamcmd.sh +login anonymous +force_install_dir ${STEAMAPPDIR} \
-		+@sSteamCmdForcePlatformType windows +app_update ${STEAMAPPID} +quit \
 	&& apt-get remove --purge -y \
 		wget \
 	&& apt-get clean autoclean \
